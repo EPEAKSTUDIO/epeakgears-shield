@@ -1,0 +1,14 @@
+{
+  "name": "epeakgears-shield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Epeak Studio",
+  "license": "ISC",
+  "dependencies": {
+    "autobahn": "^0.10.1"
+  }
+}
