@@ -1,7 +1,19 @@
-// Import third party libraries
-var https = require('https');
-var autobahn = require('autobahn');
+var envUtils = require('./utils/envUtils.js');
+var logUtils = require('./utils/logUtils.js');
+var shield = require('./shield.js');
 
-console.log("Starting Shield...");
+logUtils.info('---------------------------------------------------------------------------');
+logUtils.info('Starting Shield...');
+logUtils.info('---------------------------------------------------------------------------');
 
-console.log("Shield started and ready to cast sensor data");
+// Detect environment 
+envUtils.detectEnvironment();
+
+//Perform environment key checks
+var hasErrors = envUtils.checkEnvVars();
+
+if(!hasErrors) {
+	shield.start();
+} else {
+	logUtils.error('The Shield could not boot due to previous errors.');
+}
